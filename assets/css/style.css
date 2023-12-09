@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+:root {
+    --Purple: hsl(259, 100%, 65%);
+    --LightRed: hsl(0, 100%, 67%);
+
+    --White: hsl(0, 0%, 100%);
+    --OffWhite: hsl(0, 0%, 94%);
+    --LightGrey: hsl(0, 0%, 86%);
+    --SmokeyGrey: hsl(0, 1%, 44%);
+    --OffBlack: hsl(0, 0%, 8%);
+}
+
+body {
+    background: var(--OffWhite);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins";
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.container {
+    background: var(--White);
+    padding: 2em 2em;
+    width: 90dvw;
+    max-width: 500px;
+    min-width: 300px;
+    border-radius: 8px 8px 25% 8px;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.input-group label {
+    color: var(--SmokeyGrey);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin: 5px 0;
+    transition: all 350ms ease;
+}
+
+.input-group.error label {
+    color: var(--LightRed);
+}
+
+.input-group input {
+    font-size: 32px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--SmokeyGrey);
+    font-weight: 700;
+    transition: all 350ms ease;
+}
+
+.input-group input:is(:hover, :focus-visible, :active) {
+    border-color: var(--Purple);
+}
+
+.input-group.error input {
+    border-color: var(--LightRed);
+}
+
+.input-group p {
+    opacity: 0;
+    transition: all 350ms ease;
+    padding: 0;
+    font-size: 12px;
+}
+
+.input-group.error p {
+    opacity: 1;
+    color: var(--LightRed);
+    font-family: "Poppins";
+}
+
+.submit-button {
+    position: relative;
+    width: 100%;
+    height: 70px;
+}
+
+.submit-button button {
+    width: 70px;
+    aspect-ratio: 1;
+    background: var(--Purple);
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: -50%;
+    right: 0;
+    transition: all 350ms ease;
+}
+
+.submit-button button:is(:hover, :focus-visible) {
+    background: var(--OffBlack);
+}
+
+.output {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.output li {
+    font-family: "Poppins";
+    font-size: 5em;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 0.9;
+    color: var(--OffBlack);
+}
+
+.output li span {
+    color: var(--Purple);
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        align-items: flex-start;
+        width: 75svw;
+        padding: 2em 1em;
+    }
+
+    .submit-button button {
+        right: calc(50% - (70px / 2));
+    }
+
+    .input-container {
+        gap: 5px;
+    }
+
+    .input-group input{
+        width: 80px;
+        font-size: 28px;
+    }
+    
+    .output li {
+        font-size: 3em;
+    }
+}
